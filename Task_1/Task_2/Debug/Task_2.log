@@ -1,0 +1,4 @@
+﻿  task_2.cpp
+c:\users\илья\documents\visual studio 2015\projects\task_1\task_2\task_2.cpp(130): warning C4715: bfs: значение возвращается не при всех путях выполнения
+  Task_2.vcxproj -> C:\Users\Илья\Documents\Visual Studio 2015\Projects\Task_1\Debug\Task_2.exe
+  Task_2.vcxproj -> C:\Users\Илья\Documents\Visual Studio 2015\Projects\Task_1\Debug\Task_2.pdb (Full PDB)

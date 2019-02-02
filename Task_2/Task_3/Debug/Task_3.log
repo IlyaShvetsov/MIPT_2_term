@@ -1,0 +1,11 @@
+﻿  task_3.cpp
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(53): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(59): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(69): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(79): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(89): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(228): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(256): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\илья\documents\visual studio 2015\projects\task_2\task_3\task_3.cpp(208): warning C4715: Bfs: значение возвращается не при всех путях выполнения
+  Task_3.vcxproj -> C:\Users\Илья\documents\visual studio 2015\Projects\Task_2\Debug\Task_3.exe
+  Task_3.vcxproj -> C:\Users\Илья\documents\visual studio 2015\Projects\Task_2\Debug\Task_3.pdb (Full PDB)

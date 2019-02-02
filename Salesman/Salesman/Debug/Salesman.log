@@ -1,0 +1,7 @@
+﻿  main.cpp
+c:\users\илья\documents\visual studio 2015\projects\salesman\salesman\main.cpp(10): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
+  Пропуск... (изменения не обнаружены)
+  True_solution.cpp
+  Salesman.vcxproj -> C:\Users\Илья\documents\visual studio 2015\Projects\Salesman\Debug\Salesman.exe
+  Salesman.vcxproj -> C:\Users\Илья\documents\visual studio 2015\Projects\Salesman\Debug\Salesman.pdb (Full PDB)

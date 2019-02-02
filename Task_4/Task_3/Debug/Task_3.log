@@ -1,0 +1,13 @@
+﻿  task_3.cpp
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(173): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(197): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(206): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(208): warning C4244: аргумент: преобразование "double" в "unsigned int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(218): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(221): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(222): warning C4244: аргумент: преобразование "__int64" в "unsigned int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(222): warning C4244: аргумент: преобразование "double" в "unsigned int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(248): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
+c:\users\илья\documents\visual studio 2015\projects\task_4\task_3\task_3.cpp(259): warning C4018: <: несоответствие типов со знаком и без знака
+  Task_3.vcxproj -> C:\Users\Илья\documents\visual studio 2015\Projects\Task_4\Debug\Task_3.exe
+  Task_3.vcxproj -> C:\Users\Илья\documents\visual studio 2015\Projects\Task_4\Debug\Task_3.pdb (Full PDB)
