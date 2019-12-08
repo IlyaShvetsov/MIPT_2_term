@@ -3,13 +3,13 @@
 
 class True_solution {
 public:
-	True_solution(const CMatrixGraph& graph);
-	~True_solution() {}
+    True_solution(const CMatrixGraph& graph);
+    ~True_solution() {}
 
-	float Solution();
+    float Solution();
 
 private:
-	int verticesCount;
-	vector <vector <float> > edges;
-	float ans;
+    int verticesCount;
+    vector <vector <float> > edges;
+    float ans;
 };

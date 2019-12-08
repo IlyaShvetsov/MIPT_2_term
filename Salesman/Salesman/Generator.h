@@ -3,6 +3,6 @@
 
 class Generator {
 public:
-	CMatrixGraph Generate(int n);
+    CMatrixGraph Generate(int n);
 
 };
