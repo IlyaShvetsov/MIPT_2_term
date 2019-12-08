@@ -9,12 +9,12 @@ using namespace std;
 
 class CBoard {
 public:
-    explicit CBoard() {}
+    explicit CBoard() = default;
     CBoard(int _cells, short _null_pos, vector<char> _way) :
             cells(_cells),
             null_pos(_null_pos),
             way(_way) {}
-    ~CBoard() {}
+    ~CBoard() = default;
 
     void FillBoard(int input, short _null_pos);
     int GetCells() { return cells; }
@@ -37,23 +37,22 @@ private:
     vector<char> way;
 };
 
-void CBoard::FillBoard(int input, short _null_pos)
-{
+void CBoard::FillBoard(int input, short _null_pos) {
     cells = input;
     null_pos = _null_pos;
 }
 
-short getDigit(int number, short digit)
-{
-    if (number == 0)
+short getDigit(int number, short digit) {
+    if (number == 0) {
         return number % 10;
+    }
     int x = number / pow(10, digit);
     return x % 10;
 }
 
-CBoard CBoard::GoRight() const
-{
-    int newBoard = cells + pow(10, (8 - null_pos)) * (getDigit(cells, 7 - null_pos) - 9) - pow(10, (7 - null_pos)) * (getDigit(cells, 7 - null_pos) - 9);
+CBoard CBoard::GoRight() const {
+    int newBoard = cells + pow(10, (8 - null_pos)) * (getDigit(cells, 7 - null_pos) - 9)
+            - pow(10, (7 - null_pos)) * (getDigit(cells, 7 - null_pos) - 9);
     short newNull = null_pos + 1;
     vector<char> newWay = way;
     newWay.push_back('R');
@@ -61,9 +60,9 @@ CBoard CBoard::GoRight() const
     return board;
 }
 
-CBoard CBoard::GoLeft() const
-{
-    int newBoard = cells - pow(10, (9 - null_pos)) * (getDigit(cells, 9 - null_pos) - 9) + pow(10, (8 - null_pos)) * (getDigit(cells, 9 - null_pos) - 9);
+CBoard CBoard::GoLeft() const {
+    int newBoard = cells - pow(10, (9 - null_pos)) * (getDigit(cells, 9 - null_pos) - 9)
+            + pow(10, (8 - null_pos)) * (getDigit(cells, 9 - null_pos) - 9);
     short newNull = null_pos - 1;
     vector<char> newWay = way;
     newWay.push_back('L');
@@ -71,9 +70,9 @@ CBoard CBoard::GoLeft() const
     return board;
 }
 
-CBoard CBoard::GoDown() const
-{
-    int newBoard = cells + pow(10, (8 - null_pos)) * (getDigit(cells, 5 - null_pos) - 9) - pow(10, (5 - null_pos)) * (getDigit(cells, 5 - null_pos) - 9);
+CBoard CBoard::GoDown() const {
+    int newBoard = cells + pow(10, (8 - null_pos)) * (getDigit(cells, 5 - null_pos) - 9)
+            - pow(10, (5 - null_pos)) * (getDigit(cells, 5 - null_pos) - 9);
     short newNull = null_pos + 3;
     vector<char> newWay = way;
     newWay.push_back('D');
@@ -81,9 +80,9 @@ CBoard CBoard::GoDown() const
     return board;
 }
 
-CBoard CBoard::GoUp() const
-{
-    int newBoard = cells - pow(10, (11 - null_pos)) * (getDigit(cells, 11 - null_pos) - 9) + pow(10, (8 - null_pos)) * (getDigit(cells, 11 - null_pos) - 9);
+CBoard CBoard::GoUp() const {
+    int newBoard = cells - pow(10, (11 - null_pos)) * (getDigit(cells, 11 - null_pos) - 9)
+            + pow(10, (8 - null_pos)) * (getDigit(cells, 11 - null_pos) - 9);
     short newNull = null_pos - 3;
     vector<char> newWay = way;
     newWay.push_back('U');
@@ -91,149 +90,126 @@ CBoard CBoard::GoUp() const
     return board;
 }
 
-bool CBoard::CanRight() const
-{
-    if (null_pos != 2 && null_pos != 5 && null_pos != 8)
-        return true;
-    else
-        return false;
+bool CBoard::CanRight() const {
+    return null_pos != 2 && null_pos != 5 && null_pos != 8;
 }
 
-bool CBoard::CanLeft() const
-{
-    if (null_pos != 0 && null_pos != 3 && null_pos != 6)
-        return true;
-    else
-        return false;
+bool CBoard::CanLeft() const {
+    return null_pos != 0 && null_pos != 3 && null_pos != 6;
 }
 
-bool CBoard::CanUp() const
-{
-    if (null_pos != 0 && null_pos != 1 && null_pos != 2)
-        return true;
-    else
-        return false;
+bool CBoard::CanUp() const {
+    return null_pos != 0 && null_pos != 1 && null_pos != 2;
 }
 
-bool CBoard::CanDown() const
-{
-    if (null_pos != 6 && null_pos != 7 && null_pos != 8)
-        return true;
-    else
-        return false;
+bool CBoard::CanDown() const {
+    return null_pos != 6 && null_pos != 7 && null_pos != 8;
 }
 
 
 
-bool correct(int cells)
-{
+bool correct(int cells) {
     vector<short> beginState;
     beginState.resize(9);
-    for (int i = 0; i < 9; ++i)
-    {
+    for (int i = 0; i < 9; ++i) {
         beginState[8 - i] = cells % 10;
         cells = cells / 10;
     }
     int current_num_nine;
-    for (int i = 0; i < 9; ++i)
-    {
+    for (int i = 0; i < 9; ++i) {
         if (beginState[i] == 9)
             current_num_nine = i;
     }
     int correct = 0;
-    for (int i = 0; i < 9; ++i)
+    for (int i = 0; i < 9; ++i) {
         for (int j = i; j < 9; ++j) {
             if ((beginState[i] > beginState[j])) {
                 correct += 1;
             }
         }
+    }
     correct += current_num_nine;
-    if (correct % 2 == 0)
-        return true;
-    return false;
+    return correct % 2 == 0;
 }
 
-CBoard Bfs(CBoard& board)
-{
+CBoard Bfs(CBoard& board) {
     CBoard newBoard;
     queue<CBoard> q;
     unordered_set<int> s;
     q.push(board);
-    while (!q.empty())
-    {
+    while (!q.empty()) {
         board = q.front();
         q.pop();
-        if (board.CanRight())
-        {
+
+        if (board.CanRight()) {
             newBoard = board.GoRight();
-            if (!s.count(newBoard.GetCells()))
-            {
-                if (newBoard.GetCells() == 123456789)
+            if (!s.count(newBoard.GetCells())) {
+                if (newBoard.GetCells() == 123456789) {
                     return newBoard;
+                }
                 q.push(newBoard);
                 s.insert(newBoard.GetCells());
             }
         }
-        if (board.CanLeft())
-        {
+
+        if (board.CanLeft()) {
             newBoard = board.GoLeft();
-            if (!s.count(newBoard.GetCells()))
-            {
-                if (newBoard.GetCells() == 123456789)
+            if (!s.count(newBoard.GetCells())) {
+                if (newBoard.GetCells() == 123456789) {
                     return newBoard;
+                }
                 q.push(newBoard);
                 s.insert(newBoard.GetCells());
             }
         }
-        if (board.CanDown())
-        {
+
+        if (board.CanDown()) {
             newBoard = board.GoDown();
-            if (!s.count(newBoard.GetCells()))
-            {
-                if (newBoard.GetCells() == 123456789)
+            if (!s.count(newBoard.GetCells())) {
+                if (newBoard.GetCells() == 123456789) {
                     return newBoard;
+                }
                 q.push(newBoard);
                 s.insert(newBoard.GetCells());
             }
         }
-        if (board.CanUp())
-        {
+
+        if (board.CanUp()) {
             newBoard = board.GoUp();
-            if (!s.count(newBoard.GetCells()))
-            {
-                if (newBoard.GetCells() == 123456789)
+            if (!s.count(newBoard.GetCells())) {
+                if (newBoard.GetCells() == 123456789) {
                     return newBoard;
+                }
                 q.push(newBoard);
                 s.insert(newBoard.GetCells());
             }
         }
+
     }
 }
 
-short Solution(CBoard& board, vector<char>& ans)
-{
-    if (!correct(board.GetCells()))
+short Solution(CBoard& board, vector<char>& ans) {
+    if (!correct(board.GetCells())) {
         return -1;
+    }
     board = Bfs(board);
-    for (int i = 0; i < board.GetWay().size(); ++i)
+    for (int i = 0; i < board.GetWay().size(); ++i) {
         ans.push_back(board.GetWay()[i]);
+    }
     return board.GetCount();
 }
 
 
 
-int main()
-{
+int main() {
     ifstream inp("puzzle.in");
     ofstream out("puzzle.out");
     CBoard board;
     int input = 0;
     short a, null_pos;
-    for (int i = 0; i < 9; ++i)
-    {
+    for (int i = 0; i < 9; ++i) {
         inp >> a;
-        if (a == 0)
-        {
+        if (a == 0) {
             a = 9;
             null_pos = i;
         }
@@ -243,8 +219,9 @@ int main()
     board.FillBoard(input, null_pos);
     vector<char> ans;
     out << Solution(board, ans) << endl;
-    for (int i = 0; i < ans.size(); ++i)
+    for (int i = 0; i < ans.size(); ++i) {
         out << ans[i];
+    }
 
     inp.close();
     out.close();
